@@ -3,3 +3,4 @@
 tests/code/*
 tests/results/*
 tmp/*
+*.m.el
