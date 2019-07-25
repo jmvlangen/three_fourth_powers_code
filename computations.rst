@@ -1255,19 +1255,16 @@ fields. The code requires to compute the composite field of these
 fields and the image field of the corresponding character which would
 take very long using the methods in SAGE. Therefore we help the code
 by preloading the fact that the coefficient field already contains the
-field of the character. The appropiate embedding data was precomputed
-and is loaded from "tmp/nfs1_roots.sobj"
+field of the character.
 
 ::
 
-   sage: z = load("tmp/nfs1_roots.sobj")
    sage: for i in z:
    ....:     f = nfs2[i]
    ....:     Kf = f.coefficient_field()
    ....:     Lf = f.character().base_ring()
    ....:     mapK = Kf.hom(Kf)
-   ....:     iotaf = z[i].parent().hom([Kf.gen()], Kf)
-   ....:     mapL = Lf.hom([iotaf(z[i])], Kf)
+   ....:     mapL = Lf.embeddings(Kf)[0]
    ....:     composite_field.cache[((Kf, Lf, True),())] = (Kf, mapK, mapL)
    ....:     composite_field.cache[((Lf, Kf, True),())] = (Kf, mapL, mapK)
    ....:     composite_field.cache[((Kf, Lf, False),())] = Kf
