@@ -1,5 +1,5 @@
 =======================================================
- On the equation :math:`(x-y)^4 + x^4 + (x+y)^4 = z^n`
+ On the sum of fourth powers in arithmetic progression
 =======================================================
 
 In this document we give all the computations done for the paper.
