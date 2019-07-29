@@ -46,9 +46,7 @@ magma script. This script can be executed using the _load_ command
 from within a magma terminal or directly by opening a terminal inside
 this directory and typing
 
-``shell
->> magma generate_nfs.m
-``
+    >> magma generate_nfs.m
 
 Note that generating these files will take a long time (about a week)
 and is therefore not recommended. Pre-computed versions of these files
@@ -69,9 +67,7 @@ All the output in the document can be checked using SageMath's
 doc-test system. Simply open a terminal in the current directory and
 type
 
-``shell
->> sage -t -T 0 -m 0 computations.rst
-``
+    >> sage -t -T 0 -m 0 computations.rst
 
 The additional arguments are required, since the computations exceeds
 the standard time and memory limits of Sage's doc-tests.
@@ -86,9 +82,7 @@ In order to use the Sage code and work with Frey curves and other
 tools developed for this paper, start a Sage terminal in this
 directory and type
 
-``shell
-sage: load('load.sage')
-``
+    sage: load('load.sage')
 
 which will load all the code from the _src_ directory. Note that the
 paths in _load.sage_ are relative and thus require the sage terminal
