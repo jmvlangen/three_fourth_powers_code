@@ -2,8 +2,10 @@
  On the sum of fourth powers in arithmetic progression
 =======================================================
 
-In this document we give all the computations done for the paper.
+In this document we give all the computations done for the paper `On
+the sum of fourth powers in arithmetic progression`_.
 
+.. _On the sum of fourth powers in arithmetic progression: https://arxiv.org/abs/1907.12351
 .. linkall
 
 Throughout :math:`(a, b, c)` will be a primitive solution to

@@ -1,8 +1,8 @@
 # Code for the article: _On the sum of fourth powers in arithmetic progression_
 
 This git repository contains files required to perform the
-computational part of the article: _On the sum of fourth powers in
-arithmetic progression_.
+computational part of the article: [_On the sum of fourth powers in
+arithmetic progression_](https://arxiv.org/abs/1907.12351).
 
 ## Contents
 
