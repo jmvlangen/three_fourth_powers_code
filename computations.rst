@@ -1261,7 +1261,7 @@ field of the character.
 
 ::
 
-   sage: for i in z:
+   sage: for i in range(len(nfs2)):
    ....:     f = nfs2[i]
    ....:     Kf = f.coefficient_field()
    ....:     Lf = f.character().base_ring()

@@ -478,7 +478,7 @@ class Qcurve(EllipticCurve_number_field):
         for g,e in fd.factor():
             Kd.<l> = self.definition_field().extension(g)
             Kdabs = Kd.absolute_field(names='a'+str(degree))
-            yotad = Kdabs.convert_map_from(Kd) * K.hom(Kd)
+            yotad = Kdabs.convert_map_from(Kd) * self.definition_field().hom(Kd)
             Ed = EllipticCurve_number_field.base_extend(self, yotad)
             l = Kdabs(l)
             S.<x> = Kdabs[]
