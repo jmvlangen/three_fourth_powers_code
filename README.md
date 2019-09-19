@@ -1,19 +1,29 @@
 # Code for the article: _On the sum of fourth powers in arithmetic progression_
 
-This git repository contains files required to perform the
-computational part of the article: [_On the sum of fourth powers in
-arithmetic progression_](https://arxiv.org/abs/1907.12351).
+This git repository contains files related to the computational part
+of the article: [_On the sum of fourth powers in arithmetic
+progression_](https://arxiv.org/abs/1907.12351). It contains
+documented Sage code for working with Frey curves, Q-curves and
+Frey-Q-curves as well as the corresponding newforms. Furthermore the
+file _computations.sage_ gives all the details for the computations
+done in the mentioned article. It consists of code snippets combined
+with explanatory notes to make the computations insightful.
 
 ## Contents
 
+* **computations.rst** A structured file giving all the computations
+  needed for the article accompanied by explanatory notes. This file
+  explains in detail what computations have to be done, the input that
+  has to be provided to compute this and the corresponding output. The
+  output can be automatically verified using Sage's doc-test system
+  (see _How to use_)
+
 * **src** A folder containing code written for Sage to perform various
-  computations on Frey curves, Q-curves and Diophantine equations.
+  computations on Frey curves, Q-curves and Diophantine equations. An
+  effort has been made to document the code according to the Sage
+  guidelines for developers.
 
-* **load.sage** A script to load all the Sage code into sage.
-
-* **computations.rst** A file that contains all the computations that
-  verify the various claims throughout the paper. The computations can
-  be verified using Sage's doc-test system (see _How to use_)
+* **load.sage** A script to load all the Sage code into Sage.
   
 * **save\_nfs.m** Some MAGMA code to save newforms to the file format
   specified in _src/modular\_forms/newform wrapper.sage_.
