@@ -11,7 +11,7 @@ with explanatory notes to make the computations insightful.
 
 ## Contents
 
-* **computations.rst** A structured file giving all the computations
+* **calculations.rst** A structured file giving all the computations
   needed for the article accompanied by explanatory notes. This file
   explains in detail what computations have to be done, the input that
   has to be provided to compute this and the corresponding output. The
@@ -29,7 +29,7 @@ with explanatory notes to make the computations insightful.
   specified in _src/modular\_forms/newform wrapper.sage_.
   
 * **generate\_nfs.m** A magma script that will compute the newforms
-  used in the paper and save them to the files used by _computations.rst_.
+  used in the paper and save them to the files used by _calculations.rst_.
   
 * **README.md** This file
 
@@ -47,7 +47,7 @@ recommended. The installation should be set up such that it is
 accessible through SageMath's [MAGMA
 interface](http://doc.sagemath.org/html/en/reference/interfaces/sage/interfaces/magma.html).
 
-If you want to test the computations in _computations.rst_make sure
+If you want to test the computations in _calculations.rst_make sure
 you have an installation of MAGMA as described before. Furthermore you
 need a directory in this directory called _tmp_ that contains the
 files _E1.nfs_ and _E2.nfs_ containing the newform data needed for the
@@ -66,7 +66,7 @@ are available upon request.
 
 ### Checking the computations
 
-The file _computations.rst_ contains all the computations needed for
+The file _calculations.rst_ contains all the computations needed for
 the paper. The file is written in reStructuredText and can be opened
 with any text editor. The file contains fragments of code, written as
 the input on the Sage command line followed by the corresponding
@@ -77,7 +77,7 @@ All the output in the document can be checked using SageMath's
 doc-test system. Simply open a terminal in the current directory and
 type
 
-    >> sage -t -T 0 -m 0 computations.rst
+    >> sage -t -T 0 -m 0 calculations.rst
 
 The additional arguments are required, since the computations exceeds
 the standard time and memory limits of Sage's doc-tests.
