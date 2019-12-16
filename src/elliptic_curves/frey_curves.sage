@@ -1642,22 +1642,22 @@ class FreyQcurve(FreyCurve, Qcurve):
             L, K_to_L, alpha = field_with_root(K, s(gamma)/gamma,
                                                give_embedding=True)
             isogenies[s] = (K_to_L(iota(l(s))) * alpha, d(s))
-        H = [t for t in G if (all(t(isogenies[s][0]) == isogenies[s][0]
-                                  for s in G) and
-                              all(t(c) == c for a in ainvs
-                                  for c in a.coefficients()))]
-        Kmin = fixed_field(H)
-        if Kmin != K:
-            isogenies_min = {}
-            G = Kmin.galois_group()
-            for s in Kmin.galois_group():
-                l, d = isogenies[galois_field_change(s, K)]
-                isogenies_min[s] = (Kmin(l), d)
-            ainvs = [a.change_ring(Kmin) for a in ainvs]
-            im_gens = K_E.gens()[0].minpoly().change_ring(Kmin).roots()
-            return FreyQcurve(ainvs, isogenies=isogenies_min,
-                              parameter_ring=self._R,
-                              condition=self._condition)
+        # H = [t for t in G if (all(t(isogenies[s][0]) == isogenies[s][0]
+        #                           for s in G) and
+        #                       all(t(c) == c for a in ainvs
+        #                           for c in a.coefficients()))]
+        # Kmin = fixed_field(H)
+        # if Kmin != K:
+        #     isogenies_min = {}
+        #     G = Kmin.galois_group()
+        #     for s in Kmin.galois_group():
+        #         l, d = isogenies[galois_field_change(s, K)]
+        #         isogenies_min[s] = (Kmin(l), d)
+        #     ainvs = [a.change_ring(Kmin) for a in ainvs]
+        #     im_gens = K_E.gens()[0].minpoly().change_ring(Kmin).roots()
+        #     return FreyQcurve(ainvs, isogenies=isogenies_min,
+        #                       parameter_ring=self._R,
+        #                       condition=self._condition)
         return FreyQcurve(ainvs, isogenies=isogenies,
                           parameter_ring=self._R,
                           condition=self._condition)
