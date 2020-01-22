@@ -950,44 +950,46 @@ conjugacy class, giving us the characters for the newforms
    (Dirichlet character modulo 15 of conductor 15 mapping 11 |--> -1, 7 |--> zeta4,
     Dirichlet character modulo 15 of conductor 15 mapping 11 |--> -1, 7 |--> -zeta4)
 
-Next we compute the conductors of the restriction of scalar as
-mentioned in the proof.
+Next we compute the conductors of the curves `E1c` and `E2c` over
+`Kbeta`. Note that this can be done with the method `conductor()` as
+we have already shown that the definition field of these curves is
+isomorphic to `Kbeta`.
 
 ::
 
-   sage: N1 = E1c.conductor_restriction_of_scalars(); N1
+   sage: N1_ = E1c.conductor(); N1_
    Warning: Assuming that a and b are coprime.
-   2^(4*n0+24)*43046721*244140625*Norm(Rad_P( ((23782266551879220937500/59141881469*azeta1500^7 + 1126822572008348510812500/59141881469*azeta1500^6 + 13988031177932864349750000/59141881469*azeta1500^5 - 59265495307535319274500000/59141881469*azeta1500^4 - 1775371096351391663808000000/59141881469*azeta1500^3 - 1236605090022138111120000000/59141881469*azeta1500^2 + 58326576546407013852786000000/59141881469*azeta1500 + 6699553759806124820472000000/59141881469)) * (a^2 + (1/1001088*azeta1500^7 + 1/111232*azeta1500^6 - 21/27808*azeta1500^5 - 1163/125136*azeta1500^4 + 249/3476*azeta1500^3 + 578/869*azeta1500^2 - 111719/31284*azeta1500 + 8884/2607)*b^2) * (a^2 + (-1/1001088*azeta1500^7 - 1/111232*azeta1500^6 + 21/27808*azeta1500^5 + 1163/125136*azeta1500^4 - 249/3476*azeta1500^3 - 578/869*azeta1500^2 + 111719/31284*azeta1500 + 1544/2607)*b^2)^2 ))
+   (2, -9879079/45420964968192*azeta1500^7 - 173467169/7570160828032*azeta1500^6 - 5970662267/11355241242048*azeta1500^5 - 3277697591/5677620621024*azeta1500^4 + 183424710959/2838810310512*azeta1500^3 + 50726315113/354851288814*azeta1500^2 - 883273550975/354851288814*azeta1500 + 149381648308/59141881469)^n0*(3)*(1)*(1)*Rad_P( ((23782266551879220937500/59141881469*azeta1500^7 + 1126822572008348510812500/59141881469*azeta1500^6 + 13988031177932864349750000/59141881469*azeta1500^5 - 59265495307535319274500000/59141881469*azeta1500^4 - 1775371096351391663808000000/59141881469*azeta1500^3 - 1236605090022138111120000000/59141881469*azeta1500^2 + 58326576546407013852786000000/59141881469*azeta1500 + 6699553759806124820472000000/59141881469)) * (a^2 + (1/1001088*azeta1500^7 + 1/111232*azeta1500^6 - 21/27808*azeta1500^5 - 1163/125136*azeta1500^4 + 249/3476*azeta1500^3 + 578/869*azeta1500^2 - 111719/31284*azeta1500 + 8884/2607)*b^2) * (a^2 + (-1/1001088*azeta1500^7 - 1/111232*azeta1500^6 + 21/27808*azeta1500^5 + 1163/125136*azeta1500^4 - 249/3476*azeta1500^3 - 578/869*azeta1500^2 + 111719/31284*azeta1500 + 1544/2607)*b^2)^2 )
     where 
    n0 = 12 if ('a', 'b') == (1, 0) mod 2
-        10 if ('a', 'b') == (1, 1) mod 2
-   sage: N2 = E2c.conductor_restriction_of_scalars(); N2
+   10 if ('a', 'b') == (1, 1) mod 2
+   sage: N2_ = E2c.conductor(); N2_
    Warning: Assuming that a and b are coprime.
-   1936465405881733890441216000000000000*Norm(Rad_P( ((17973045129994189000000/59141881469*azeta1500^7 + 851560867877408703000000/59141881469*azeta1500^6 + 10570632468562506924000000/59141881469*azeta1500^5 - 44792083812043020808000000/59141881469*azeta1500^4 - 1341640897948993214880000000/59141881469*azeta1500^3 - 934184557863352113984000000/59141881469*azeta1500^2 + 44076529752976112634848000000/59141881469*azeta1500 + 5062815140007181381632000000/59141881469)) * (a^2 + (-1/1001088*azeta1500^7 - 1/111232*azeta1500^6 + 21/27808*azeta1500^5 + 1163/125136*azeta1500^4 - 249/3476*azeta1500^3 - 578/869*azeta1500^2 + 111719/31284*azeta1500 + 1544/2607)*b^2) * (a^2 + (1/1001088*azeta1500^7 + 1/111232*azeta1500^6 - 21/27808*azeta1500^5 - 1163/125136*azeta1500^4 + 249/3476*azeta1500^3 + 578/869*azeta1500^2 - 111719/31284*azeta1500 + 8884/2607)*b^2)^2 ))
+   (128)*Rad_P( ((17973045129994189000000/59141881469*azeta1500^7 + 851560867877408703000000/59141881469*azeta1500^6 + 10570632468562506924000000/59141881469*azeta1500^5 - 44792083812043020808000000/59141881469*azeta1500^4 - 1341640897948993214880000000/59141881469*azeta1500^3 - 934184557863352113984000000/59141881469*azeta1500^2 + 44076529752976112634848000000/59141881469*azeta1500 + 5062815140007181381632000000/59141881469)) * (a^2 + (-1/1001088*azeta1500^7 - 1/111232*azeta1500^6 + 21/27808*azeta1500^5 + 1163/125136*azeta1500^4 - 249/3476*azeta1500^3 - 578/869*azeta1500^2 + 111719/31284*azeta1500 + 1544/2607)*b^2) * (a^2 + (1/1001088*azeta1500^7 + 1/111232*azeta1500^6 - 21/27808*azeta1500^5 - 1163/125136*azeta1500^4 + 249/3476*azeta1500^3 + 578/869*azeta1500^2 - 111719/31284*azeta1500 + 8884/2607)*b^2)^2 )
 
-We check that this is indeed the same as the expression given in the
-proof of Proposition 4.9. For the left side this is an easy check.
-
-::
-
-   sage: N1.left().value()
-   49629490343711156465565696000000000000 if ('a', 'b') == (1, 0) mod 2
-   193865196655121704943616000000000000   if ('a', 'b') == (1, 1) mod 2
-   sage: N1.left().value()[0][0] == 2^72 * 3^16 * 5^12
-   True
-   sage: N1.left().value()[1][0] == 2^64 * 3^16 * 5^12
-   True
-   sage: N2.left() == 2^80 * 3^8 * 5^12
-   True
-
-For the right side we first note that this is the norm of the radical
-of the discriminant outside primes dividing 30.
+We check that the left part of these conductors is indeed as mentioned
+in the article.
 
 ::
 
-   sage: N1.right() == "Norm(Rad_P( " + str(E1c.discriminant().factor()) + " ))"
+   sage: N1_.left().value()
+   Fractional ideal (192) if ('a', 'b') == (1, 0) mod 2
+   Fractional ideal (96)  if ('a', 'b') == (1, 1) mod 2
+   sage: N1_.left().value()[0][0] == E1c.definition_field().ideal(2^6 * 3)
    True
-   sage: N2.right() == "Norm(Rad_P( " + str(E2c.discriminant().factor()) + " ))"
+   sage: N1_.left().value()[1][0] == E1c.definition_field().ideal(2^5 * 3)
+   True
+   sage: N2_.left() == E2c.definition_field().ideal(2^7)
+   True
+
+For the right side we first note that this is the radical of the
+discriminant outside primes dividing 30.
+
+::
+
+   sage: N1_.right() == "Rad_P( " + str(E1c.discriminant().factor()) + " )"
+   True
+   sage: N2_.right() == "Rad_P( " + str(E2c.discriminant().factor()) + " )"
    True
    sage: (Set(E1c.primes_of_possible_additive_reduction()) ==
    ....:  Set(E1c.definition_field().primes_above(30)))
@@ -1018,17 +1020,67 @@ divisible by primes dividing 30.
    sage: cf.norm().factor()
    2^108 * 3^12 * 5^48
 
-This implies that the right side is just the norm of the radical of
-:math:`c` outside primes dividing 30. Since the field :math:`K_\beta`
-only ramifies at primes dividing 30 and has degree 8, we easily find
-that this is simply the radical of :math:`c` over the integers outside
-30, to the power 8. We verify that only the primes dividing 30 ramify
-and that the degree of :math:`K_\beta` is 8 here.
+This implies that the right side is just the radical of :math:`c`
+outside primes dividing 30. Since the field :math:`K_\beta` only
+ramifies at primes dividing 30, we easily find that this is simply the
+ideal generated by the radical of :math:`c` over the integers
+outside 30. We verify that only the primes dividing 30 ramify by
+computing the determinant of :math:`K_\beta` which we also need later
+on.
 
 ::
 
-   sage: Kbeta.discriminant().factor()
+   sage: Dbeta = Kbeta.discriminant()
+   sage: Dbeta.factor()
    2^12 * 3^4 * 5^6
+
+As mentioned in the proof we can compute the condutor of the
+restriction of scalars from these results, but the code also allows us
+to compute this conductor directly.
+
+::
+
+   sage: N1 = E1c.conductor_restriction_of_scalars(); N1
+   2^(4*n0+24)*43046721*244140625*Norm(Rad_P( ((23782266551879220937500/59141881469*azeta1500^7 + 1126822572008348510812500/59141881469*azeta1500^6 + 13988031177932864349750000/59141881469*azeta1500^5 - 59265495307535319274500000/59141881469*azeta1500^4 - 1775371096351391663808000000/59141881469*azeta1500^3 - 1236605090022138111120000000/59141881469*azeta1500^2 + 58326576546407013852786000000/59141881469*azeta1500 + 6699553759806124820472000000/59141881469)) * (a^2 + (1/1001088*azeta1500^7 + 1/111232*azeta1500^6 - 21/27808*azeta1500^5 - 1163/125136*azeta1500^4 + 249/3476*azeta1500^3 + 578/869*azeta1500^2 - 111719/31284*azeta1500 + 8884/2607)*b^2) * (a^2 + (-1/1001088*azeta1500^7 - 1/111232*azeta1500^6 + 21/27808*azeta1500^5 + 1163/125136*azeta1500^4 - 249/3476*azeta1500^3 - 578/869*azeta1500^2 + 111719/31284*azeta1500 + 1544/2607)*b^2)^2 ))
+    where 
+   n0 = 12 if ('a', 'b') == (1, 0) mod 2
+        10 if ('a', 'b') == (1, 1) mod 2
+   sage: N2 = E2c.conductor_restriction_of_scalars(); N2
+   1936465405881733890441216000000000000*Norm(Rad_P( ((17973045129994189000000/59141881469*azeta1500^7 + 851560867877408703000000/59141881469*azeta1500^6 + 10570632468562506924000000/59141881469*azeta1500^5 - 44792083812043020808000000/59141881469*azeta1500^4 - 1341640897948993214880000000/59141881469*azeta1500^3 - 934184557863352113984000000/59141881469*azeta1500^2 + 44076529752976112634848000000/59141881469*azeta1500 + 5062815140007181381632000000/59141881469)) * (a^2 + (-1/1001088*azeta1500^7 - 1/111232*azeta1500^6 + 21/27808*azeta1500^5 + 1163/125136*azeta1500^4 - 249/3476*azeta1500^3 - 578/869*azeta1500^2 + 111719/31284*azeta1500 + 1544/2607)*b^2) * (a^2 + (1/1001088*azeta1500^7 + 1/111232*azeta1500^6 - 21/27808*azeta1500^5 - 1163/125136*azeta1500^4 + 249/3476*azeta1500^3 + 578/869*azeta1500^2 - 111719/31284*azeta1500 + 8884/2607)*b^2)^2 ))
+
+We verify that the left part of this is the same as mentioned in the
+article. We also check it is the same as `Dbeta` squared times the
+norm of the left side of `N1_` and `N2_` respectively as it should be.
+
+::
+
+   sage: N1.left().value()
+   49629490343711156465565696000000000000 if ('a', 'b') == (1, 0) mod 2
+   193865196655121704943616000000000000   if ('a', 'b') == (1, 1) mod 2
+   sage: N1.left().value()[0][0] == 2^72 * 3^16 * 5^12
+   True
+   sage: N1.left().value()[0][0] == Dbeta^2 * N1_.left().value()[0][0].norm()
+   True
+   sage: N1.left().value()[1][0] == 2^64 * 3^16 * 5^12
+   True
+   sage: N1.left().value()[1][0] == Dbeta^2 * N1_.left().value()[1][0].norm()
+   True
+   sage: N2.left() == 2^80 * 3^8 * 5^12
+   True
+   sage: N2.left() == Dbeta^2 * N2_.left().norm()
+   True
+
+For the right side we note this is simply the norm of the right side
+of `N1_` or `N2_` respectively. Since these are ideals generated by
+integers and the degree of `Kbeta` is 8, these are just the radical of
+:math:`c` to the power 8 as mentioned in the article.
+
+::
+
+   sage: N1.right() == "Norm(" + N1_.right() + ")"
+   True
+   sage: N2.right() == "Norm(" + N2_.right() + ")"
+   True
    sage: Kbeta.degree()
    8
 
