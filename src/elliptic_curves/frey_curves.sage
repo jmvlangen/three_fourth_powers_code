@@ -1647,14 +1647,17 @@ class FreyQcurve(FreyCurve, Qcurve):
                               all(t(c) == c for a in ainvs
                                   for c in a.coefficients()))]
         Kmin = fixed_field(H)
+        to_Kmin = Kmin._coerce_from_other_number_field
         if Kmin != K:
             isogenies_min = {}
             G = Kmin.galois_group()
             for s in Kmin.galois_group():
                 l, d = isogenies[galois_field_change(s, K)]
-                isogenies_min[s] = (Kmin(l), d)
-            ainvs = [a.change_ring(Kmin) for a in ainvs]
-            im_gens = K_E.gens()[0].minpoly().change_ring(Kmin).roots()
+                isogenies_min[s] = (to_Kmin(l), d)
+            R = ainvs[0].parent().change_ring(Kmin)
+            ainvs = [sum(to_Kmin(a.monomial_coefficient(m)) * R(m)
+                         for m in a.monomials())
+                     for a in ainvs]
             return FreyQcurve(ainvs, isogenies=isogenies_min,
                               parameter_ring=self._R,
                               condition=self._condition)

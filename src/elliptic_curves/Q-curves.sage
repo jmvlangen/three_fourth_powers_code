@@ -2132,12 +2132,13 @@ class Qcurve(EllipticCurve_number_field):
                                    for s in G) and
                                all(t(a) == a for a in ainvs))]
         Kmin = fixed_field(H)
+        to_Kmin = Kmin._coerce_from_other_number_field
         if Kmin != K:
             isogenies_min = {}
             for s in Kmin.galois_group():
                 l, d = isogenies[galois_field_change(s, Kold)]
-                isogenies_min[s] = (Kmin(l), d)
-            ainvs = [Kmin(a) for a in ainvs]
+                isogenies_min[s] = (to_Kmin(l), d)
+            ainvs = [to_Kmin(a) for a in ainvs]
             return Qcurve(ainvs, isogenies=isogenies_min)
         return Qcurve(ainvs, isogenies=isogenies)
     
